@@ -3,29 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#09090b">
 <title>Markul — 25</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:#111;color:#fff;font-family:Arial,sans-serif;
-display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:100%;max-width:420px;background:#1c1c1e;border-radius:24px;padding:32px 22px;
-text-align:center;box-shadow:0 12px 40px #0008}
-h1{font-size:30px;margin:0 0 8px}
-p{color:#aaa;margin:0 0 24px;font-size:16px}
-a{display:block;text-decoration:none;background:#fff;color:#111;border-radius:14px;
-padding:16px;margin:12px 0;font-size:17px;font-weight:700}
-a:active{transform:scale(.98)}
+
+html,body{min-height:100%}
+
+body{
+  margin:0;
+  min-height:100vh;
+  padding:24px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 50% 15%,#38383d 0,transparent 32%),
+    radial-gradient(circle at 10% 90%,#1c1c20 0,transparent 35%),
+    #09090b;
+}
+
+.card{
+  position:relative;
+  width:100%;
+  max-width:430px;
+  padding:34px 20px 22px;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  background:rgba(22,22,25,.82);
+  box-shadow:0 24px 70px rgba(0,0,0,.55);
+  backdrop-filter:blur(18px);
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  left:50%;
+  top:-150px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  filter:blur(10px);
+}
+
+.cover{
+  position:relative;
+  width:112px;
+  height:112px;
+  margin:0 auto 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:24px;
+  background:linear-gradient(145deg,#29292e,#0e0e10);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 16px 35px rgba(0,0,0,.45);
+}
+
+.cover img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:inherit;
+}
+
+h1{
+  position:relative;
+  margin:0 0 7px;
+  font-size:31px;
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+
+.subtitle{
+  position:relative;
+  margin:0 0 25px;
+  color:#a8a8ad;
+  font-size:15px;
+}
+
+.links{
+  display:grid;
+  gap:12px;
+}
+
+.platform{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:62px;
+  padding:10px 16px;
+  color:#fff;
+  text-decoration:none;
+  border-radius:17px;
+  border:1px solid rgba(255,255,255,.10);
+  overflow:hidden;
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+}
+
+.platform:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+
+.platform:active{
+  transform:scale(.98);
+}
+
+.icon{
+  flex:0 0 40px;
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  font-weight:900;
+  font-size:21px;
+  background:rgba(0,0,0,.18);
+}
+
+.name{
+  flex:1;
+  text-align:left;
+  font-size:17px;
+  font-weight:750;
+}
+
+.arrow{
+  color:rgba(255,255,255,.60);
+  font-size:22px;
+  line-height:1;
+}
+
+.yandex{
+  background:linear-gradient(135deg,#ff3131,#d90b32);
+  box-shadow:0 9px 25px rgba(240,20,50,.22);
+}
+.yandex .icon{font-family:Arial,sans-serif}
+
+.vk{
+  background:linear-gradient(135deg,#1687f8,#0077ff);
+  box-shadow:0 9px 25px rgba(0,119,255,.22);
+}
+.vk .icon{font-size:16px;letter-spacing:-1px}
+
+.spotify{
+  background:linear-gradient(135deg,#1ed760,#0b9f45);
+  box-shadow:0 9px 25px rgba(29,215,96,.20);
+}
+.spotify .icon{font-size:24px}
+
+.soundcloud{
+  background:linear-gradient(135deg,#ff8a00,#ff4b00);
+  box-shadow:0 9px 25px rgba(255,100,0,.20);
+}
+.soundcloud .icon{font-size:18px}
+
+.footer{
+  margin:22px 0 0;
+  color:#68686e;
+  font-size:11px;
+  letter-spacing:.3px;
+}
+
+@media(max-width:380px){
+  .card{padding:28px 15px 19px;border-radius:24px}
+  .cover{width:96px;height:96px}
+  h1{font-size:28px}
+  .platform{min-height:58px;padding:9px 13px}
+}
 </style>
 </head>
+
 <body>
 <main class="card">
-<h1>Markul — 25</h1>
-<p>Выберите площадку для прослушивания</p>
-<a href="https://music.yandex.ru/album/5905756/track/44121104?utm_source=web&utm_medium=copy_link">Яндекс Музыка</a>
-<a href="https://vk.ru/audio-2001089226_149089226_13fbfae76ebcbef708">VK</a>
-<a href="https://open.spotify.com/track/1gEJ2sWFXsdHwTJhcG78ey?si=ae3865db5d964a12">Spotify</a>
-<a href="https://soundcloud.com/markulmusic/25a?si=7ed5aa334d8f4246b24da48978e6ef4c&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">SoundCloud</a>
+  <div class="cover">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/6d/6b/0f/6d6b0f8d-7759-62d2-2268-1f87ec1758f4/cover.jpg/1200x1200bb.jpg" alt="Обложка трека Markul — 25">
+  </div>
+
+  <h1>Markul — 25</h1>
+  <p class="subtitle">Слушать на любимой площадке</p>
+
+  <div class="links">
+    <a class="platform yandex" href="https://music.yandex.ru/album/5905756/track/44121104?utm_source=web&utm_medium=copy_link" target="_blank" rel="noopener">
+      <span class="icon">Я</span>
+      <span class="name">Яндекс Музыка</span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="platform vk" href="https://vk.ru/audio-2001089226_149089226_13fbfae76ebcbef708" target="_blank" rel="noopener">
+      <span class="icon">VK</span>
+      <span class="name">VK Музыка</span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="platform spotify" href="https://open.spotify.com/track/1gEJ2sWFXsdHwTJhcG78ey?si=ae3865db5d964a12" target="_blank" rel="noopener">
+      <span class="icon">●</span>
+      <span class="name">Spotify</span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="platform soundcloud" href="https://soundcloud.com/markulmusic/25a?si=7ed5aa334d8f4246b24da48978e6ef4c&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" rel="noopener">
+      <span class="icon">☁</span>
+      <span class="name">SoundCloud</span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <div class="footer">MARKUL · 25</div>
 </main>
 </body>
 </html>
